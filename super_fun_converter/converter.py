@@ -1,4 +1,4 @@
 from pypif.obj import ChemicalSystem()
 
-def convert(**kwargs):
+def convert(files=None, **kwargs):
     return ChemicalSystem() 
