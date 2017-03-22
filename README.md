@@ -24,6 +24,13 @@ This is a example module that contains a convert method.
 You can change the name of the module by renaming the file.
 Just be sure it contains a `convert` method that takes keyword arguments.
 
+### `description.yaml`
+
+This file contains a description of the converter that is used when constructing a UI for it.
+The main block is list of arguments, giving their name and type along with a description of the argument
+and whether it is required or optional.
+The example file contains additional information about specifying types.
+
 ### `setup.py`
 
 This file describes your converter package.
