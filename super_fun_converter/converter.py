@@ -1,4 +1,4 @@
-from pypif.obj import ChemicalSystem()
+from pypif.obj import ChemicalSystem
 
 def convert(files=[], important_argument=None, whatever_argument=[1.0, 1.0, 1.0], **kwargs):
     """
@@ -11,4 +11,4 @@ def convert(files=[], important_argument=None, whatever_argument=[1.0, 1.0, 1.0]
     """
     if not important_argument:
         raise KeyError("The important_argument argument was not passed to convert")
-    return ChemicalSystem() 
+    return ChemicalSystem()
