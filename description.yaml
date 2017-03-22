@@ -1,0 +1,20 @@
+# This file describes the converter
+
+convert_arguments: # These are the arguments for the convert method
+- name: important_argument # each argument has a name (must be a valid python key)
+  desc: A really important argument # and a description (any string)
+  type: String # this is the type of the argument (see below)
+  required: true # and whether or not the argument is required
+
+- name: whatever_argument # Any number of arguments can be specified
+  desc: A less important argument
+  type: List[3][Real] # this is a 3-length vector
+  required: false
+
+## Valid types:
+# String
+# Integer
+# Real
+# List[n][t], where n is the number of elements in the list and t is the corresponding primitive type
+# e.g. List[3][Real] is a vector of length three
+# e.g. List[2][String] is a list of two strings
