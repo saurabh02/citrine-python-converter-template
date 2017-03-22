@@ -1,10 +1,13 @@
 # This file describes the converter
+name: super_fun_converter                       # Any valid python key (should be unique)
+version: 0.1.1                                  # Please use 3-number versions
+description: A super fun citrination converter. # Any string
 
-convert_arguments: # These are the arguments for the convert method
-- name: important_argument # each argument has a name (must be a valid python key)
+convert_arguments:                  # These are the arguments for the convert method
+- name: important_argument          # each argument has a name (must be a valid python key)
   desc: A really important argument # and a description (any string)
-  type: String # this is the type of the argument (see below)
-  required: true # and whether or not the argument is required
+  type: String                      # this is the type of the argument (see below)
+  required: true                    # and whether or not the argument is required
 
 - name: whatever_argument # Any number of arguments can be specified
   desc: A less important argument
