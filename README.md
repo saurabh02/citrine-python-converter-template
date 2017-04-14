@@ -56,7 +56,7 @@ They are automatically installed.
 
 ### `Dockerfile`
 
-This file describes the docker container, almost exclusively by inheriting from `citrine-executor-python:latest`.
+This file describes the docker container, almost exclusively by inheriting from `citrine-executor-python:latest-onbuild`.
 You shouldn't need to edit this file.
 
 ## `convert()` method
