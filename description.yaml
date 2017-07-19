@@ -1,23 +1,45 @@
-# This file describes the converter
-name: super_fun_converter                       # Any valid python key (should be unique)
-version: 0.1.1                                  # Please use 3-number versions
-description: A super fun citrination converter. # Any string
+# This file describes the converter and its arguments to tell the driver how to construct the UI
 
+## The first block gives the name, namespace, version, and description of the converter
+name: super_fun_ingester                        # Any valid python key (should be unique)
+namespace: citrine/examples                     # folder-like grouping that can be used across multiple ingesters
+version: 2.1.3                                  # Please use 3-number versions
+description: A super fun citrination ingester.  # Any string
+
+## The second block lists the arguments, specifying their names, descriptions, types, 
+## any default values, and whether they are required or optional.
+##
+## Supported primitive types:
+##  - String
+##  - Boolean
+##  - Integer
+##  - Real (which is a float)
+##
+## There is also support for fixed-size lists with the form List[size][type].  For
+## example, List[3][Real] would be a 3 length list.  Multi-dimensional lists are not currently
+## supported.
 convert_arguments:                  # These are the arguments for the convert method
 - name: important_argument          # each argument has a name (must be a valid python key)
   desc: A really important argument # and a description (any string)
-  type: String                      # this is the type of the argument (see below)
+  type: Integer                     # this is the type of the argument (see above)
   required: true                    # and whether or not the argument is required
 
 - name: whatever_argument # Any number of arguments can be specified
   desc: A less important argument
-  type: List[3][Real] # this is a 3-length vector
-  required: false
+  type: List[3][Real] # this is a 3-length list
+  default: # With default values
+    - 0.0
+    - 1.0
+    - 2.0
+  required: true # defaults are only supported for required arguments
 
-## Valid types:
-# String
-# Integer
-# Real
-# List[n][t], where n is the number of elements in the list and t is the corresponding primitive type
-# e.g. List[3][Real] is a vector of length three
-# e.g. List[2][String] is a list of two strings
+- name: do_some_extra_thing # Here's an example for a boolean
+  desc: Run some additional preprocessing on something
+  type: Boolean 
+  default: false
+  required: true
+
+- name: some_condition
+  desc: The condition of the data, if known
+  type: String
+  required: false # the condition might not be known, so it doesn't need to be specified
