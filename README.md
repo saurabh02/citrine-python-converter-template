@@ -54,10 +54,6 @@ entry_points={
 This file lists all of the python packages needed to run the converter with exact version numbers.
 They are automatically installed.
 
-### `Dockerfile`
-
-This file describes the docker container, almost exclusively by inheriting from `citrine-executor-python:latest-onbuild`.
-You shouldn't need to edit this file.
 
 ## `convert()` method
 
