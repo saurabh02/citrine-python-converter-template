@@ -18,7 +18,7 @@ It is helpful (but not strictly required) if the name doesn't conflict with any 
 
 This directory contains the converter
 
-### `converter.py`
+### `my_module.py`
 
 This is a example module that contains a convert method.
 You can change the name of the module by renaming the file.
