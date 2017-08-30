@@ -12,7 +12,7 @@ setup(name='super_fun_converter',
     ],
     entry_points={
         'citrine.dice.converter': [
-            'super_fun = super_fun_converter.converter',
+            'super_fun = super_fun_converter.my_module',
         ],
     },
 )
