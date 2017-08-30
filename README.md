@@ -1,6 +1,9 @@
 # citrine-python-converter-template
 
-This is a template for defining converters in python.  It can also be used to guide retrofitting of existing converters.
+This is a template for defining Citrination-compatible converters in python.
+These converters can be hosted on Citrination as an "ingester" or run through the [pif-ingestor](https://github.com/CitrineInformatics/pif-ingestor) CLI driver.
+This is accomplished by defining an extension with a `convert` method is loaded and executed by drivers on Citrination or locally.
+
 
 ## Usage
 
@@ -27,7 +30,7 @@ Just be sure it contains a `convert` method that takes keyword arguments.
 ### `description.yaml`
 
 This file contains a description of the converter that is used when constructing a UI for it.
-The main block is list of arguments, giving their name and type along with a description of the argument
+The main block is a list of arguments, giving their name and type along with a description of the argument
 and whether it is required or optional.
 The example file contains additional information about specifying types.
 
@@ -58,8 +61,8 @@ They are automatically installed.
 ## `convert()` method
 
 what we've just done is define an `extension` that can be used in Citrination's data ingest pipeline
-and [command line importer](https://github.com/CitrineInformatics/pif-importer).
+and [command line ingestor](https://github.com/CitrineInformatics/pif-ingestor).
 The extension is used by calling a method called `convert` with [keyword arguments](https://docs.python.org/3.6/glossary.html#term-argument).
 There will always be a keyword argument `files` that is a list of strings.
-These are the files that are to be converted into a PIF.
+These are the files that are to be converted into a [PIF](http://citrineinformatics.github.io/pif-documentation/).
 `convert` should return either a PIF or a list of PIFs.
